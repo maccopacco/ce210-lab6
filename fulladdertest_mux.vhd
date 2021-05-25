@@ -27,7 +27,8 @@ ENTITY fulladdertest_mux IS
 END fulladdertest_mux;
 
 ARCHITECTURE test OF fulladdertest_mux IS
-   COMPONENT fulladdermax
+   
+	COMPONENT fulladdermux
    Port ( A,B,Cin : in   STD_LOGIC;
           S, Cout : out  STD_LOGIC
    );
