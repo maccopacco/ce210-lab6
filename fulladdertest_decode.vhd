@@ -14,24 +14,25 @@
 --
 -- Revision: 
 -- Revision 0.01 - File Created
--- Revision 0.02 - Updated name
+-- Revision 0.02 - Renames
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY fulladdertest_mux IS   
+-- Note that this top-level entity name must be changed to match the name of the project
+ENTITY fulladdertest_decode IS   
    PORT ( SW : in std_logic_vector(9 downto 7);
           LEDR : out std_logic_vector(9 downto 8) 
    );
-END fulladdertest_mux;
+END fulladdertest_decode;
 
-ARCHITECTURE test OF fulladdertest_mux IS
-   
-	COMPONENT fulladdermux
-   Port ( A,B,Cin : in   STD_LOGIC;
-          S, Cout : out  STD_LOGIC
+ARCHITECTURE test OF fulladdertest_decode IS
+
+   COMPONENT decoder3to8
+      Port ( d : in   STD_LOGIC_VECTOR(2 downto 0);
+				 y : out  STD_LOGIC_VECTOR(7 downto 0)
    );
    END COMPONENT;
    
@@ -43,7 +44,7 @@ ARCHITECTURE test OF fulladdertest_mux IS
    
 BEGIN
 
-   DUT0 : fulladdermux port map (Ai,Bi,Cin,Si,Cout);
+--   DUT0 : fulladder_behave port map (Ai,Bi,Cin,Si,Cout);
    
 END test;
           
