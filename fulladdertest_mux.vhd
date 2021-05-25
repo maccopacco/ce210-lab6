@@ -14,24 +14,20 @@
 --
 -- Revision: 
 -- Revision 0.01 - File Created
--- Revision 0.02 - Comment / spacing changes
 -- Additional Comments: 
-
 --
 ----------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
--- Project name is fulladdertest, no change required
-ENTITY fulladdertest IS   
+ENTITY fulladdertest_mux IS   
    PORT ( SW : in std_logic_vector(9 downto 7);
           LEDR : out std_logic_vector(9 downto 8) 
    );
-END fulladdertest;
+END fulladdertest_mux;
 
-ARCHITECTURE test OF fulladdertest IS
-
-   COMPONENT fulladder_behave
+ARCHITECTURE test OF fulladdertest_mux IS
+   COMPONENT fulladdermax
    Port ( A,B,Cin : in   STD_LOGIC;
           S, Cout : out  STD_LOGIC
    );
@@ -45,7 +41,7 @@ ARCHITECTURE test OF fulladdertest IS
    
 BEGIN
 
-   DUT0 : fulladder_behave port map (Ai,Bi,Cin,Si,Cout);
+   DUT0 : fulladdermux port map (Ai,Bi,Cin,Si,Cout);
    
 END test;
           
