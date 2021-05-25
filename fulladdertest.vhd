@@ -22,7 +22,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
--- Project name is fulladdertest, no change r
+-- Project name is fulladdertest, no change required
 ENTITY fulladdertest IS   
    PORT ( SW : in std_logic_vector(9 downto 7);
           LEDR : out std_logic_vector(9 downto 8) 
